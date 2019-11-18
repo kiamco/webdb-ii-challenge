@@ -6,10 +6,10 @@ exports.up = function(knex) {
     cars.string('VIN').notNullable().unique();
     cars.string('make').notNullable();
     cars.string('model').notNullable();
-    cars.int('mileage')
+    cars.integer('mileage')
   })
 };
-
+ 
 exports.down = function(knex) {
   return knex.schema.dropTableIfExists('cars')
 };
